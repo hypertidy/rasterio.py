@@ -1,0 +1,5 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+extdata_dir|stem|da7e5646cbdfced7|d07472fa0dd473e9|e1997432ce2b511c|-1923373092|inst/extdata|t0s|f4066a65ff755f48|0|file|local|vector|||0.002||
+inst_dir|stem|da7e5646cbdfced7|c5362bbab10623af|c3b5fc02cdc369c1|-81721769|inst|t0s|f4066a65ff755f48|0|file|local|vector|||0.128||
+rgba_tif|stem|2a30119a12dfb010|91ca05023cacb209|ecb42424215e7af1|1731658487|inst/extdata/RGBA.byte.tif|t19097.4385600282s|54f566be7683ce1a|2275012|file|local|vector|||0.001||
+rgba_tif_file|stem|2a30119a12dfb010|c38f59458bd3a3ec|7797bb1812455ee4|-1541561629|inst/extdata/RGBA.byte.tif|t19097.4385600282s|54f566be7683ce1a|2275012|file|local|vector|||0.491||

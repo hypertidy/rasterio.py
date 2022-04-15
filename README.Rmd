@@ -1,0 +1,79 @@
+---
+output: github_document
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# rasterio.py
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of rasterio.py is to provide an R interface to rasterio. 
+
+rasterio is a Python package that provides low-level facilities to the [GDAL](https://www.gdal.org/), much like
+the R [rgdal](https://CRAN.r-project.or/package=rgdal) did in the past. The Python bindings have always been closer and more complete to the spirit of the GDAL library itself than R, but rasterio itself is a modernization of the original Python support for GDAL. 
+
+R does not have a comprehensive interface to the GDAL C++ library yet, so this package provides a showcase of what is possible. The facilities via Python are fine! The only real disadvantage is the dependency on Python, there's no obvious performance reason to avoid rasterio however. 
+
+## Installation
+
+You can install the development version of rasterio.py like so:
+
+``` r
+# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+```{r example}
+library(rasterio.py)
+## basic example code
+file <- rgba_tif()  ## just the path to the RGBA.byte.tif of rasterio canon
+dataset <- open.py(file)
+
+dataset$bounds
+dataset$transform
+```
+
+rasterio.py has some R helper functions for these Python reticulate objects. 
+
+plot, extent, more to come ...
+
+WIP
+
+```{r cars}
+plot(dataset)
+
+extent.py(dataset)
+
+(warped <- warp.py(dataset$files[1], extent = c(-1, 1, -1, 1) * 1e5, dimension = c(512, 768), projection = "+proj=aeqd +lon_0=-77.6 +lat_0=24.5", resample = "cubic"))
+
+plot(warped)
+```
+
+
+We can of course read from the COG!!  (but, overview handling isn't great yet so we're keeping examples close)
+
+```{r cog-wonders, eval=FALSE, include =FALSE}
+gebco <- "/vsicurl/https://public.services.aad.gov.au/datasets/science/GEBCO_2019_GEOTIFF/GEBCO_2019.tif"
+
+dem <- open.py(gebco)
+plot(dem)
+
+dem <- warp.py(gebco, extent = c(130, 170, -65, -35), dimension = c(720, 360), projection = "OGC:CRS84")
+plot(dem)
+```

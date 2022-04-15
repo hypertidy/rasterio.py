@@ -1,0 +1,17 @@
+Package: rasterio.py
+Title: An R Interface to rasterio
+Version: 0.0.0.9000
+Authors@R: 
+    c(person("Michael D.", "Sumner", , "mdsumner@gmail.com", role = c("aut", "cre")),
+    person("Sean", "Gillies", role = "aut", comment = "Author of Python rasterio"))
+Description: Provides an R interface to the Python package rasterio.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.2
+Config/reticulate:
+  list(
+    packages = list(
+      list(package = "rasterio")
+    )
+  )
